@@ -1,3 +1,5 @@
+import {MainView} from "../../views/MainView";
+
 export const App = () => {
   return (
     <div
@@ -10,7 +12,7 @@ export const App = () => {
         color: '#010101'
       }}
     >
-      Job List
+      <MainView/>
     </div>
   );
 };
