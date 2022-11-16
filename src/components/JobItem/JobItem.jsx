@@ -1,4 +1,5 @@
 import styles from './JobItem.module.css';
+import {RatingStars} from "../UI/Rating";
 
 export const JobItem = () => {
 
@@ -9,7 +10,9 @@ export const JobItem = () => {
         <h3 className={styles.title}>Job Item</h3>
         <p className={styles.subTitle}>sub title</p>
       </div>
-      <div className={styles.rating}></div>
+      <div className={styles.rating}>
+        <RatingStars/>
+      </div>
       <div className={styles.bookmark}></div>
     </li>
 
