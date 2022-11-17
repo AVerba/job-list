@@ -1,4 +1,4 @@
-
+import styles from './App.module.css';
 
 import {Routes, Route} from 'react-router-dom';
 import ImageLoader from "../UI/Loader/Loader";
@@ -10,16 +10,7 @@ const NotFoundPage = lazy(() => import('../../views/NotFoundView/NotFoundView'))
 
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
+    <div className={styles.wrapper}>
       <Suspense fallback={<ImageLoader/>}>
         <Routes>
           <Route path="/" element={<MainView/>}/>
@@ -27,7 +18,6 @@ export const App = () => {
           <Route path="*" element={<NotFoundPage/>}/>
         </Routes>
       </Suspense>
-
     </div>
   );
 };

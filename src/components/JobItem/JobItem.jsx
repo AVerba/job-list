@@ -1,11 +1,12 @@
 import styles from './JobItem.module.css';
 import {RatingStars} from "../UI/Rating";
+import * as propTypes from "prop-types";
 
-export const JobItem = () => {
+export const JobItem = ({ id, poster, title }) => {
 
   return (
-    <li key={}>
-      <img className={styles.avatar} src={} alt={}/>
+    <li key={id}>
+      <img className={styles.avatar} src={poster} alt={title}/>
       <div className={styles.description}>
         <h3 className={styles.title}>Job Item</h3>
         <p className={styles.subTitle}>sub title</p>
@@ -18,3 +19,8 @@ export const JobItem = () => {
 
   );
 }
+JobItem.propTypes = {
+  id: propTypes.number.isRequired,
+  title: propTypes.string.isRequired,
+  poster: propTypes.string,
+};
