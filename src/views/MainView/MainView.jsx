@@ -9,7 +9,7 @@ const Status = {
   REJECTED: 'rejected',
 };
 
-export const MainView = () => {
+const MainView = () => {
   const [jobs, setJobs] = useState();
   const [status, setStatus] = useState(Status.IDLE);
   const [error, setError] = useState(null);
@@ -34,3 +34,4 @@ export const MainView = () => {
     <>Main View</>
   )
 }
+export default MainView;

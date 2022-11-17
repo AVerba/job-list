@@ -1,8 +1,9 @@
 import style from './JobDetailsView.module.css';
 
-export const JobDetailsView = () => {
+const JobDetailsView = () => {
   return(
     <>Job Details View</>
   )
 
 }
+export default JobDetailsView;
