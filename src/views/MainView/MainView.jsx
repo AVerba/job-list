@@ -1,7 +1,10 @@
-import style from './MainView.module.css';
+import styles from './MainView.module.css';
 import {useEffect, useState} from "react";
 import jobAPI from '../../services/serviceApi';
 import {Desktop, Mobile, Tablet} from "../../utils/mediaQuery";
+import {MapLocation} from "../../components/MapLocation";
+import {JobList} from "../../components/JobList";
+import {JobItem} from "../../components/JobItem";
 
 const Status = {
   IDLE: 'idle',
@@ -40,10 +43,16 @@ const MainView = () => {
 
       <Tablet>
         <>Main View Tablet</>
+        {/*<MapLocation/>*/}
       </Tablet>
 
       <Desktop>
-        <>Main View Desktop</>
+
+          {/*<>Main View Desktop</>*/}
+        <JobItem/>
+          {/*<JobList/>*/}
+
+
       </Desktop>
     </>
 

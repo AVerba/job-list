@@ -1,0 +1,92 @@
+.item{
+  display: flex;
+  align-items: center;
+  background-color:#ffffff;
+  padding:24px 16px;
+  box-shadow: 2px 1px 7px rgba(0, 0, 0, 0.08), 0px 2px 1px -1px rgba(0, 0, 0, 0.04), 0px 1px 3px rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+}
+.img{
+  display: block;
+
+  height:85px;
+  width: 85px;
+  border-radius: 50%;
+}
+.itemImg{
+  height:85px;
+  width: 85px;
+  border-radius: 50%;
+}
+.description{
+  display:flex;
+  flex-direction: column;
+}
+.title{
+  margin:0;
+  padding:0;
+  /*font-family: Proxima Nova;*/
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+  /* or 125% */
+  letter-spacing: -0.625px;
+  color: #3A4562;
+}
+.name{
+  /*font-family: 'Proxima Nova';*/
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25px;
+  /* identical to box height, or 156% */
+
+  letter-spacing: 0.23619px;
+
+  /* Text/Secondary */
+
+  color: #878D9D;
+}
+.location{
+  display:flex;
+  /*justify-content: center;*/
+  align-items: center;
+  /*font-family: 'Proxima Nova';*/
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25px;
+  /* identical to box height, or 156% */
+
+  letter-spacing: 0.23619px;
+
+  /* Text/Secondary */
+
+  color: #878D9D;
+}
+.icon{
+  margin-right: 8px;
+}
+.bookmark{
+  display:flex;
+  flex-direction:column;
+  align-items: flex-end;
+}
+.postDate{
+  /*font-family: 'Proxima Nova';*/
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25px;
+  /* or 156% */
+
+  display: flex;
+  align-items: flex-end;
+  text-align: right;
+  letter-spacing: 0.23619px;
+
+  /* Text/Secondary */
+
+  color: #878D9D;
+}

@@ -4,8 +4,8 @@ const media = (children, device) => {
   return device ? children : null;
 };
 
-export const isDesktop = cb => cb({ minWidth: 1280 });
-export const isTablet = cb => cb({ minWidth: 768, maxWidth: 1279 });
+export const isDesktop = cb => cb({ minWidth: 1400 });
+export const isTablet = cb => cb({ minWidth: 768, maxWidth: 1399 });
 export const isMobile = cb => cb({ maxWidth: 767 });
 export const isDefault = cb => cb({ minWidth: 768 });
 
