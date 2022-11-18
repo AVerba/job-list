@@ -21,6 +21,10 @@
 .description{
   display:flex;
   flex-direction: column;
+  margin-left:26px;
+}
+.rating{
+  margin-left:32px;
 }
 .title{
   margin:0;
@@ -72,6 +76,7 @@
   display:flex;
   flex-direction:column;
   align-items: flex-end;
+  margin-left: 32px;
 }
 .postDate{
   /*font-family: 'Proxima Nova';*/
