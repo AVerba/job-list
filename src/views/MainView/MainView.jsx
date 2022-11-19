@@ -5,6 +5,7 @@ import {Desktop, Mobile, Tablet} from "../../utils/mediaQuery";
 import {MapLocation} from "../../components/MapLocation";
 import {JobList} from "../../components/JobList";
 import {JobItem} from "../../components/JobItem";
+import {JobItemMob} from "../../components/JobItemMob/JobItemMob";
 
 const Status = {
   IDLE: 'idle',
@@ -38,7 +39,7 @@ const MainView = () => {
   return (
     <>
       <Mobile>
-        <>Main View Mobile</>
+        <JobItemMob/>
       </Mobile>
 
       <Tablet>
@@ -48,9 +49,9 @@ const MainView = () => {
 
       <Desktop>
 
-          {/*<>Main View Desktop</>*/}
+        {/*<>Main View Desktop</>*/}
         <JobItem/>
-          {/*<JobList/>*/}
+        {/*<JobList/>*/}
 
 
       </Desktop>
