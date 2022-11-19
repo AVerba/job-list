@@ -5,8 +5,12 @@ import {RatingStars} from "../UI/Rating";
 
 import {ReactComponent as LocationIcon} from "../../img/icons/Location.svg"
 import {ReactComponent as BookMark} from "../../img/icons/Bookmark.svg"
+import {dateDiff} from "../../utils/daysDiff";
 
 export const JobItem = () => {
+  const itemDay = new Date('2012-05-04T01:38:26.141Z')
+  const todayDate = new Date();
+  const dayDiff = dateDiff(todayDate, itemDay);
 
   return (
     <li key="12" className={styles.item}>
@@ -27,7 +31,7 @@ export const JobItem = () => {
       </div>
       <div className={styles.bookmark}>
         <BookMark/>
-        <p className={styles.postDate}>Posted 2 days ago</p>
+        <p className={styles.postDate}>Posted {dayDiff} ago</p>
       </div>
     </li>
 

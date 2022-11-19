@@ -1,9 +1,13 @@
 import styles from './JobItemMob.module.css';
 import {RatingStars} from "../UI/Rating";
-import {ReactComponent as BookMark} from "../../img/icons/Bookmark.svg";
 import {ReactComponent as LocationIcon} from "../../img/icons/Location.svg";
+import {dateDiff} from "../../utils/daysDiff";
 
 export const JobItemMob = () => {
+  const itemDay = new Date('2012-05-04T01:38:26.141Z')
+  const todayDate = new Date();
+  const dayDiff = dateDiff(todayDate, itemDay);
+
 
   return (
     <li className={styles.item}>
@@ -12,7 +16,7 @@ export const JobItemMob = () => {
           <RatingStars className={styles.ratingStars}/>
         </div>
         <div className={styles.bookmark}>
-          <p className={styles.postDate}>Posted 2 days ago</p>
+          <p className={styles.postDate}>Posted {dayDiff} ago</p>
         </div>
       </div>
 
