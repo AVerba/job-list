@@ -1,8 +1,14 @@
 import style from './JobDetailsView.module.css';
+import {BackButton} from "../../components/UI/BackButton";
 
 const JobDetailsView = () => {
-  return(
-    <>Job Details View</>
+  return (
+    <>
+      <h4>Job Details View</h4>
+      <BackButton/>
+    </>
+
+
   )
 
 }

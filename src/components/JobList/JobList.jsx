@@ -27,7 +27,11 @@ export const JobList = () => {
       .then((results) => {
         setStatus(Status.RESOLVED);
         seJobsListItems(results)
-      });
+      })
+      .catch(error => {
+        setError(error);
+        setStatus(Status.REJECTED);
+      });;
   }
 
   useEffect(() => {
