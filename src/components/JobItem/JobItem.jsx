@@ -6,24 +6,23 @@ import {RatingStars} from "../UI/Rating";
 import {ReactComponent as LocationIcon} from "../../img/icons/Location.svg"
 import {ReactComponent as BookMark} from "../../img/icons/Bookmark.svg"
 import {dateDiff} from "../../utils/daysDiff";
+import {JobItemMob} from "../JobItemMob/JobItemMob";
 
-export const JobItem = () => {
-  const itemDay = new Date('2012-05-04T01:38:26.141Z')
+export const JobItem = ({id,createdAt,name,address,title,pictures}) => {
   const todayDate = new Date();
-  const dayDiff = dateDiff(todayDate, itemDay);
+  const dayDiff = dateDiff(todayDate, createdAt);
 
   return (
-    <li key="12" className={styles.item}>
+    <li className={styles.item} id={id}>
       <div className={styles.itemImg}>
-        <img className={styles.img} src="https://picsum.photos/200/300" alt="Sureplex"/>
+        <img className={styles.img} src={pictures[0]} alt="Sureplex"/>
       </div>
       <div className={styles.description}>
-        <h2 className={styles.title}>Ut veniam occaecat aute adipisicing eiusmod non pariatur enim enim cupidatat nulla
-          ipsum eiusmod.</h2>
-        <p className={styles.name}>Department name • Sureplex</p>
+        <h2 className={styles.title}>{title}</h2>
+        <p className={styles.name}>Department name • {name}</p>
         <div className={styles.location}>
           <LocationIcon className={styles.icon} width="13px" height="18px"/>
-          76 Blende Jardine Place
+          {address}
         </div>
       </div>
       <div className={styles.rating}>
@@ -37,8 +36,11 @@ export const JobItem = () => {
 
   );
 }
-// JobItem.propTypes = {
-//   id: propTypes.number.isRequired,
-//   title: propTypes.string.isRequired,
-//   poster: propTypes.string,
-// };
+JobItemMob.propTypes = {
+  id: propTypes.string.isRequired,
+  name: propTypes.string.isRequired,
+  title: propTypes.string.isRequired,
+  createdAt: propTypes.string,
+  address: propTypes.string.isRequired,
+  pictures: propTypes.arrayOf(propTypes.string.isRequired),
+};
