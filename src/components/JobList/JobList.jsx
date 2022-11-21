@@ -18,6 +18,7 @@ const Status = {
 
 export const JobList = () => {
   const {jobsListItems, seJobsListItems} = useContext(GlobalContext);
+  const {setTotalPages} = useContext(GlobalContext);
   const [status, setStatus] = useState(Status.IDLE);
   const [error, setError] = useState(null);
 
@@ -26,12 +27,14 @@ export const JobList = () => {
     jobAPI.fetchSearchJobs()
       .then((results) => {
         setStatus(Status.RESOLVED);
-        seJobsListItems(results)
+        seJobsListItems(results);
+        setTotalPages(1);
       })
       .catch(error => {
         setError(error);
         setStatus(Status.REJECTED);
-      });;
+      });
+    ;
   }
 
   useEffect(() => {
@@ -45,9 +48,10 @@ export const JobList = () => {
 
   return (
     <>
+      {status === 'pending' ? <ImageLoader/> : null}
+      {status === 'rejected' ? Notify.warning(`${error.message}`) : null}
+
       <Mobile>
-        {status === 'pending' ? <ImageLoader/> : null}
-        {status === 'rejected' ? Notify.warning(`${error.message}`) : null}
         {status === 'resolved' ? (
           <ul className={styles.list}>
             {jobsListItems.map((item) => (
@@ -70,8 +74,6 @@ export const JobList = () => {
       </Tablet>
 
       <Desktop>
-        {status === 'pending' ? <ImageLoader/> : null}
-        {status === 'rejected' ? Notify.warning(`${error.message}`) : null}
         {status === 'resolved' ? (
           <ul className={styles.list}>
             {jobsListItems.map((item) => (

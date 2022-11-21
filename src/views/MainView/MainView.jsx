@@ -8,8 +8,6 @@ const MainView = () => {
       <JobList/>
       <PaginationItem/>
     </>
-
-
   )
 }
 export default MainView;

@@ -1,9 +1,13 @@
 import styles from './PaginationItem.module.css';
 import {Pagination} from "@mui/material";
+import {useContext} from "react";
+import GlobalContext from "../../../context/GlobalContext";
 
 export const PaginationItem = () => {
+  const {totalPages} = useContext(GlobalContext);
 
   return (
-    <Pagination count={10} variant="outlined" shape="rounded" />
+    totalPages ? (<Pagination count={totalPages} variant="outlined" shape="rounded"/>):(<></>)
+
   )
 }

@@ -4,6 +4,7 @@ import GlobalContext from './GlobalContext';
 
 export default function ContextWrapper(props) {
   const [jobsListItems, seJobsListItems] = useState([]);
+  const [totalPages, setTotalPages] = useState(null);
 
 
   return (
@@ -11,6 +12,8 @@ export default function ContextWrapper(props) {
       value={{
         jobsListItems,
         seJobsListItems,
+        totalPages,
+        setTotalPages
       }}
     >
       {props.children}
