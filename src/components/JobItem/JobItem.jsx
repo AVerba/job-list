@@ -7,12 +7,13 @@ import {ReactComponent as LocationIcon} from "../../img/icons/Location.svg"
 import {ReactComponent as BookMark} from "../../img/icons/Bookmark.svg"
 import {dateDiff} from "../../utils/daysDiff";
 import {JobItemMob} from "../JobItemMob/JobItemMob";
-import {Link, useLocation} from 'react-router-dom';
+import {Link, useLocation, useParams} from 'react-router-dom';
 
 export const JobItem = ({id, createdAt, name, address, title, pictures}) => {
   const location = useLocation();
   const todayDate = new Date();
   const dayDiff = dateDiff(todayDate, createdAt);
+
 
   return (
     <li className={styles.item} id={id}>

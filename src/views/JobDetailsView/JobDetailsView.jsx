@@ -1,11 +1,11 @@
 import style from './JobDetailsView.module.css';
-import {BackButton} from "../../components/UI/BackButton";
+
+import {JobDetails} from "../../components/JobDetails";
 
 const JobDetailsView = () => {
   return (
     <>
-      <h4>Job Details View</h4>
-      <BackButton/>
+      <JobDetails/>
     </>
 
 
